@@ -30,5 +30,5 @@ include(":domain")
 include(":data")
 
 
-// Reusable kit (dev.fenix:core, dev.fenix:ui) living in the sibling fenix-kotlin repo
-includeBuild("../fenix-kotlin")
+// Reusable kit (dev.fenix:core, dev.fenix:ui) living in the sibling fenix repo
+includeBuild("../fenix")
