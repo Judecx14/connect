@@ -10,44 +10,45 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import dev.fenix.customer.R
-import dev.fenix.ui.component.tag.ConnectTag
-import dev.fenix.ui.component.text.ConnectText
-import dev.fenix.ui.component.text.type.ConnectTextStyle
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.tag.FenixTag
+import dev.fenix.ui.component.text.FenixText
+import dev.fenix.ui.component.text.type.FenixTextStyle
+import dev.fenix.ui.theme.FenixTheme
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.padding(
-            start = ConnectTheme.dimensions.padding.medium,
-            end = ConnectTheme.dimensions.padding.medium,
+            start = FenixTheme.dimensions.padding.medium,
+            end = FenixTheme.dimensions.padding.medium,
+            bottom = FenixTheme.dimensions.padding.normal
         ),
         verticalArrangement = Arrangement.Bottom,
     ) {
         Row(
-            modifier = Modifier.padding(bottom = ConnectTheme.dimensions.padding.normal),
+            modifier = Modifier.padding(bottom = FenixTheme.dimensions.padding.normal),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(
-                ConnectTheme.dimensions.spacing.small
+                FenixTheme.dimensions.spacing.small
             )
         ) {
-            ConnectText(text = stringResource(R.string.login_screen_greeting_for))
-            ConnectTag(
+            FenixText(text = stringResource(R.string.login_screen_greeting_for))
+            FenixTag(
                 text = stringResource(R.string.login_screen_greeting_tag)
             )
         }
-        ConnectText(
+        FenixText(
             text = stringResource(R.string.login_screen_greeting_title),
-            style = ConnectTextStyle.Display
+            style = FenixTextStyle.Display
         )
-        ConnectText(text = stringResource(R.string.login_screen_greeting_description))
+        FenixText(text = stringResource(R.string.login_screen_greeting_description))
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 private fun AuthByPreview(){
-    ConnectTheme {
+    FenixTheme {
         Greeting()
     }
 }

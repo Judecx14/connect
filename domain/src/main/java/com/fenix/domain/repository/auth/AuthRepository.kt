@@ -1,8 +1,16 @@
 package com.fenix.domain.repository.auth
 
-import com.fenix.domain.model.auth.Credentials
+import com.fenix.domain.model.auth.AuthState
+import com.fenix.domain.model.auth.AuthCredentials
+import com.fenix.domain.model.auth.SignUpInput
+import dev.fenix.core.resource.FailureReason
+import dev.fenix.core.resource.Resource
 
 interface AuthRepository {
-    suspend fun signUp(credentials: Credentials): Boolean
-    suspend fun login(credentials: Credentials): Boolean
+    suspend fun signUp(input: SignUpInput): Resource<Unit, FailureReason>
+    suspend fun login(credentials: AuthCredentials): Resource<Unit, FailureReason>
+    suspend fun getJwt(): Resource<String, FailureReason>
+    fun getAuthProviderId(): Resource<String, FailureReason>
+    fun getAuthState(): Resource<AuthState, FailureReason>
+    fun logout():  Resource<Unit, FailureReason>
 }

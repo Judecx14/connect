@@ -61,6 +61,6 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
-    // Connect UI Kit
-    implementation(project(":ui"))
+    // Fenix kit
+    implementation(libs.fenix.ui)
 }

@@ -89,9 +89,15 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.authentication)
 
-    // Connect UI Kit
-    implementation(project(":ui"))
+    // GMS Play services location
+    implementation(libs.play.services.location)
+
+    // Fenix kit
+    implementation(libs.fenix.ui)
+    // Core
+    implementation(libs.fenix.core)
     // Domain
     implementation(project(":domain"))
     // Data

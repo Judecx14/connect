@@ -23,4 +23,9 @@
     <string name="signup_screen_form_field_label_password">Contrasena</string>
     <string name="signup_screen_form_field_placeholder_password">Escribe tu contrasena</string>
     <string name="signup_screen_form_button_signup">Registrarse</string>
+
+    <!-- Global Errors -->
+    <string name="error_invalid_credentials">El correo electrónico o la contraseña son incorrectos.</string>
+    <string name="error_user_not_found">No existe una cuenta registrada con este correo electrónico.</string>
+    <string name="error_email_already_in_use">Este correo electrónico ya se encuentra registrado.</string>
 </resources>

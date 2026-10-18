@@ -15,4 +15,10 @@ kotlin {
 dependencies {
      // DI
     implementation(libs.javax.inject)
+
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+
+    // Core
+    api(libs.fenix.core)
 }

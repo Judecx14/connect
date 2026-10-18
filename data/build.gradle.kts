@@ -4,6 +4,12 @@ plugins {
     // DI
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+
+    // Firebase
+    alias(libs.plugins.gms.google.services)
+
+    // Serialization
+    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 android {
@@ -39,6 +45,24 @@ dependencies {
     // DI
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.authentication)
+
+    // GMS Play services location
+    implementation(libs.play.services.location)
+
+    // Retrofit2
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter)
+    implementation(libs.kotlin.serialization.json)
+
+    // Serailization Error REMOVE
+    implementation(libs.androidx.annotation.experimental)
+
+    // core
+    implementation(libs.fenix.core)
 
     // domain
     implementation(project(":domain"))
