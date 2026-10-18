@@ -10,14 +10,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.fenix.ui.component.app_bar.ConnectTopBar
-import dev.fenix.ui.component.button.ConnectIconButton
+import dev.fenix.ui.component.app_bar.FenixTopBar
+import dev.fenix.ui.component.button.FenixIconButton
 import dev.fenix.ui.component.button.type.Variant
-import dev.fenix.ui.component.icon.ConnectIcon
-import dev.fenix.ui.component.icon.type.ConnectIcons
-import dev.fenix.ui.component.text.ConnectText
-import dev.fenix.ui.component.text.type.ConnectTextStyle
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.icon.FenixIcon
+import dev.fenix.ui.component.icon.type.FenixIcons
+import dev.fenix.ui.component.text.FenixText
+import dev.fenix.ui.component.text.type.FenixTextStyle
+import dev.fenix.ui.theme.FenixTheme
 import dev.fenix.ui.theme.token.color_scheme.Colors
 
 @Composable
@@ -27,42 +27,42 @@ fun TopBar(
 ) {
     val contentColor = Colors.Dark.onSurface
 
-    ConnectTopBar(
+    FenixTopBar(
         leading = {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(
-                    ConnectTheme.dimensions.spacing.small
+                    FenixTheme.dimensions.spacing.small
                 )
             ) {
-                ConnectIconButton(
+                FenixIconButton(
                     onClick = { },
                 ) {
-                    ConnectIcon(icon = ConnectIcons.UserRounded, tint = contentColor)
+                    FenixIcon(icon = FenixIcons.UserRounded, tint = contentColor)
                 }
 
                 Column(
                     verticalArrangement = Arrangement.spacedBy(
-                        ConnectTheme.dimensions.spacing.xs
+                        FenixTheme.dimensions.spacing.xs
                     ),
                 ) {
-                    ConnectText(
+                    FenixText(
                         text = "User name",
-                        style = ConnectTextStyle.Label,
+                        style = FenixTextStyle.Label,
                         color = contentColor
                     )
 
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(ConnectTheme.dimensions.spacing.xs)
+                        horizontalArrangement = Arrangement.spacedBy(FenixTheme.dimensions.spacing.xs)
                     ) {
-                        ConnectIcon(
-                            icon = ConnectIcons.Locate,
-                            modifier = Modifier.size(ConnectTheme.dimensions.icon.medium),
+                        FenixIcon(
+                            icon = FenixIcons.Locate,
+                            modifier = Modifier.size(FenixTheme.dimensions.icon.medium),
                             tint = contentColor
                         )
 
-                        ConnectText(
+                        FenixText(
                             modifier = Modifier.width(225.dp),
                             text = currentLocation,
                             color = contentColor
@@ -72,12 +72,12 @@ fun TopBar(
             }
         },
         trailing = {
-            ConnectIconButton(
+            FenixIconButton(
                 variant = Variant.Ghost,
                 onClick = logout
             ) {
-                ConnectIcon(
-                    icon = ConnectIcons.Logout,
+                FenixIcon(
+                    icon = FenixIcons.Logout,
                     tint = contentColor
                 )
             }
@@ -89,7 +89,7 @@ fun TopBar(
 @Preview
 @Composable
 private fun TopBarPreview() {
-    ConnectTheme {
+    FenixTheme {
         TopBar(currentLocation = "Street #123 Boulevard Example between", logout = { })
     }
 }

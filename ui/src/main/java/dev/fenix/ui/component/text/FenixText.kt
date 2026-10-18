@@ -10,25 +10,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.theme.ConnectTheme
-import dev.fenix.ui.component.text.type.ConnectTextStyle
+import dev.fenix.ui.theme.FenixTheme
+import dev.fenix.ui.component.text.type.FenixTextStyle
 
 @Composable
-fun ConnectText(
+fun FenixText(
     modifier: Modifier = Modifier,
     text: String,
-    style: ConnectTextStyle = ConnectTextStyle.Body,
-    color: Color = ConnectTheme.colors.onSurface,
+    style: FenixTextStyle = FenixTextStyle.Body,
+    color: Color = FenixTheme.colors.onSurface,
     align: TextAlign = TextAlign.Start,
     overflow: TextOverflow = TextOverflow.Ellipsis,
     maxLines: Int = Int.MAX_VALUE,
 ) {
     val typography = when (style) {
-        ConnectTextStyle.Display -> ConnectTheme.typography.displayLarge
-        ConnectTextStyle.Headline -> ConnectTheme.typography.headlineLarge
-        ConnectTextStyle.Title -> ConnectTheme.typography.titleLarge
-        ConnectTextStyle.Label -> ConnectTheme.typography.labelLarge
-        ConnectTextStyle.Body -> ConnectTheme.typography.bodyLarge
+        FenixTextStyle.Display -> FenixTheme.typography.displayLarge
+        FenixTextStyle.Headline -> FenixTheme.typography.headlineLarge
+        FenixTextStyle.Title -> FenixTheme.typography.titleLarge
+        FenixTextStyle.Label -> FenixTheme.typography.labelLarge
+        FenixTextStyle.Body -> FenixTheme.typography.bodyLarge
     }
 
     Text(
@@ -45,22 +45,22 @@ fun ConnectText(
 
 @Preview(showBackground = true)
 @Composable
-private fun ConnectTextPreview() {
-    ConnectTheme {
-        Column(verticalArrangement = Arrangement.spacedBy(ConnectTheme.dimensions.spacing.large)) {
-            ConnectText(text = "Display example", style = ConnectTextStyle.Display)
+private fun FenixTextPreview() {
+    FenixTheme {
+        Column(verticalArrangement = Arrangement.spacedBy(FenixTheme.dimensions.spacing.large)) {
+            FenixText(text = "Display example", style = FenixTextStyle.Display)
 
-            ConnectText(text = "Headline example", style = ConnectTextStyle.Headline)
+            FenixText(text = "Headline example", style = FenixTextStyle.Headline)
 
-            ConnectText(text = "Title example", style = ConnectTextStyle.Title)
+            FenixText(text = "Title example", style = FenixTextStyle.Title)
 
-            ConnectText(text = "Label example", style = ConnectTextStyle.Label)
+            FenixText(text = "Label example", style = FenixTextStyle.Label)
 
-            ConnectText(text = "Body example", style = ConnectTextStyle.Body)
+            FenixText(text = "Body example", style = FenixTextStyle.Body)
 
-            ConnectText(
+            FenixText(
                 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget venenatis nunc, at hendrerit purus. Fusce magna erat, suscipit ac mattis id, scelerisque vel velit. Maecenas posuere turpis ac mollis semper. Suspendisse sagittis rhoncus libero, nec vulputate quam pulvinar dictum. Nunc imperdiet gravida risus, non ornare dolor vulputate auctor. Praesent ultricies feugiat odio. In efficitur non velit non mattis. Vivamus id congue lacus. Cras est lectus, fringilla sit amet luctus vel, faucibus quis risus.",
-                style = ConnectTextStyle.Body,
+                style = FenixTextStyle.Body,
                 maxLines = 1
             )
         }

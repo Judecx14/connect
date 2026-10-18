@@ -22,7 +22,7 @@ import dev.fenix.ui.theme.token.font.Typography
 import dev.fenix.ui.theme.token.shapes
 
 @Composable
-fun ConnectTheme(
+fun FenixTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = false, // Dynamic color is available on Android 12+
     content: @Composable () -> Unit
@@ -58,7 +58,7 @@ fun ConnectTheme(
 }
 
 
-object ConnectTheme {
+object FenixTheme {
     val colors: ColorScheme
         @Composable
         @ReadOnlyComposable

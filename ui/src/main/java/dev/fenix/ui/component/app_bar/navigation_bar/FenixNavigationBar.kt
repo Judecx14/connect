@@ -13,15 +13,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import dev.fenix.ui.component.app_bar.navigation_bar.model.Scope
-import dev.fenix.ui.component.icon.ConnectIcon
-import dev.fenix.ui.component.icon.type.ConnectIcons
-import dev.fenix.ui.component.text.ConnectText
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.icon.FenixIcon
+import dev.fenix.ui.component.icon.type.FenixIcons
+import dev.fenix.ui.component.text.FenixText
+import dev.fenix.ui.theme.FenixTheme
 
 @Composable
-fun ConnectNavigationBar(
+fun FenixNavigationBar(
     modifier: Modifier = Modifier,
-    background: Color = ConnectTheme.colors.surface,
+    background: Color = FenixTheme.colors.surface,
     tonalElevation: Dp = 0.dp,
     configure: Scope.() -> Unit
 ) {
@@ -31,27 +31,27 @@ fun ConnectNavigationBar(
         modifier = modifier
             .navigationBarsPadding()
             .padding(
-                horizontal = ConnectTheme.dimensions.padding.normal,
+                horizontal = FenixTheme.dimensions.padding.normal,
             )
-            .clip(ConnectTheme.shapes.extraLarge),
+            .clip(FenixTheme.shapes.extraLarge),
         containerColor = background,
         tonalElevation = tonalElevation
     ) {
         scope.items.forEach { item ->
             NavigationBarItem(
-                label = { ConnectText(text = item.label, color = ConnectTheme.colors.primary) },
-                icon = { ConnectIcon(icon = item.icon) },
+                label = { FenixText(text = item.label, color = FenixTheme.colors.primary) },
+                icon = { FenixIcon(icon = item.icon) },
                 alwaysShowLabel = item.selected,
                 selected = item.selected,
                 onClick = item.onClick,
                 colors = NavigationBarItemColors(
-                    selectedIconColor = ConnectTheme.colors.primary,
-                    selectedTextColor = ConnectTheme.colors.primary,
+                    selectedIconColor = FenixTheme.colors.primary,
+                    selectedTextColor = FenixTheme.colors.primary,
                     selectedIndicatorColor = Color.Transparent,
-                    unselectedIconColor = ConnectTheme.colors.onSurface,
-                    unselectedTextColor = ConnectTheme.colors.onSurface,
-                    disabledIconColor = ConnectTheme.colors.onSurfaceVariant,
-                    disabledTextColor = ConnectTheme.colors.onSurfaceVariant,
+                    unselectedIconColor = FenixTheme.colors.onSurface,
+                    unselectedTextColor = FenixTheme.colors.onSurface,
+                    disabledIconColor = FenixTheme.colors.onSurfaceVariant,
+                    disabledTextColor = FenixTheme.colors.onSurfaceVariant,
                 )
             )
         }
@@ -60,12 +60,12 @@ fun ConnectNavigationBar(
 
 @Preview
 @Composable
-private fun ConnectNavigationBarPreview() {
-    ConnectTheme {
-        ConnectNavigationBar {
+private fun FenixNavigationBarPreview() {
+    FenixTheme {
+        FenixNavigationBar {
             item(
                 label = "House",
-                icon = ConnectIcons.House,
+                icon = FenixIcons.House,
                 selected = true,
                 showLabel = true,
                 onClick = {}
@@ -73,7 +73,7 @@ private fun ConnectNavigationBarPreview() {
 
             item(
                 label = "Settings",
-                icon = ConnectIcons.Bolt,
+                icon = FenixIcons.Bolt,
                 selected = false,
                 showLabel = false,
                 onClick = {}
@@ -81,7 +81,7 @@ private fun ConnectNavigationBarPreview() {
 
             item(
                 label = "List",
-                icon = ConnectIcons.ListRestart,
+                icon = FenixIcons.ListRestart,
                 selected = false,
                 showLabel = false,
                 onClick = {}
@@ -89,7 +89,7 @@ private fun ConnectNavigationBarPreview() {
 
             item(
                 label = "Exit",
-                icon = ConnectIcons.Logout,
+                icon = FenixIcons.Logout,
                 selected = false,
                 showLabel = false,
                 onClick = {}

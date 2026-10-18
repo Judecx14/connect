@@ -16,13 +16,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import dev.fenix.customer.common.ObserveFlowAsEvent
+import dev.fenix.ui.core.effect.ObserveFlowAsEvent
 import dev.fenix.customer.feature.auth.login.component.AuthBy
 import dev.fenix.customer.feature.auth.login.form.LoginFormSection
 import dev.fenix.customer.feature.auth.login.form.LoginFormGroup
 import dev.fenix.customer.feature.auth.login.component.Greeting
 import dev.fenix.customer.feature.auth.login.component.SignUpFooter
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.theme.FenixTheme
 import dev.fenix.ui.modifier.ambient_glow.ambientGlow
 import dev.fenix.ui.modifier.ambient_glow.model.Position
 import androidx.compose.material3.SnackbarHostState
@@ -40,11 +40,11 @@ private fun Content(
     onSubmit: () -> Unit,
     navigateToSignUp: () -> Unit,
 ) {
-    val colorPrimary = ConnectTheme.colors.primary
+    val colorPrimary = FenixTheme.colors.primary
 
     Scaffold(
         modifier = Modifier.ambientGlow(
-            background = ConnectTheme.colors.background
+            background = FenixTheme.colors.background
         ) {
             spot(
                 color = colorPrimary,
@@ -120,7 +120,7 @@ fun LoginScreen(
 @Preview
 @Composable
 private fun LoginScreenPreview() {
-    ConnectTheme {
+    FenixTheme {
         Content(
             uiState = LoginUiState(),
             form = LoginFormGroup(),

@@ -3,8 +3,8 @@ package dev.fenix.customer.feature.auth.signup
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fenix.domain.model.auth.SignUpInput
-import com.fenix.domain.model.resource.FailureReason
-import com.fenix.domain.model.resource.fold
+import dev.fenix.core.resource.FailureReason
+import dev.fenix.core.resource.fold
 import com.fenix.domain.use_case.auth.SignUp
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.fenix.customer.feature.auth.signup.form.SignUpFormGroup

@@ -10,9 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.component.button.ConnectIconButton
+import dev.fenix.ui.component.button.FenixIconButton
 import dev.fenix.ui.component.button.type.Variant
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.theme.FenixTheme
 
 @Composable
 fun AuthBy(modifier: Modifier = Modifier) {
@@ -22,13 +22,13 @@ fun AuthBy(modifier: Modifier = Modifier) {
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        ConnectIconButton(onClick = {}) {
+        FenixIconButton(onClick = {}) {
             Text(text = "G")
         }
 
-        Spacer(modifier.width(ConnectTheme.dimensions.spacing.small))
+        Spacer(modifier.width(FenixTheme.dimensions.spacing.small))
 
-        ConnectIconButton(onClick = {}, variant = Variant.Outlined) {
+        FenixIconButton(onClick = {}, variant = Variant.Outlined) {
             Text(text = "A")
         }
     }
@@ -37,7 +37,7 @@ fun AuthBy(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 private fun AuthByPreview(){
-    ConnectTheme {
+    FenixTheme {
         AuthBy()
     }
 }

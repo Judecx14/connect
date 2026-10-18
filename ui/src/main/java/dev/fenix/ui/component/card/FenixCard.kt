@@ -12,18 +12,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.component.button.ConnectIconButton
-import dev.fenix.ui.component.icon.ConnectIcon
-import dev.fenix.ui.component.icon.type.ConnectIcons
-import dev.fenix.ui.component.text.ConnectText
-import dev.fenix.ui.component.text.type.ConnectTextStyle
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.button.FenixIconButton
+import dev.fenix.ui.component.icon.FenixIcon
+import dev.fenix.ui.component.icon.type.FenixIcons
+import dev.fenix.ui.component.text.FenixText
+import dev.fenix.ui.component.text.type.FenixTextStyle
+import dev.fenix.ui.theme.FenixTheme
 import dev.fenix.ui.theme.token.color_scheme.Colors
 
 @Composable
-fun ConnectCard(
+fun FenixCard(
     modifier: Modifier = Modifier,
-    icon: ConnectIcons,
+    icon: FenixIcons,
     title: String,
     description: String
 ) {
@@ -31,12 +31,12 @@ fun ConnectCard(
 
     Box(
         modifier = modifier
-            .height(ConnectTheme.dimensions.height.large)
-            .clip(shape = ConnectTheme.shapes.large)
-            .background(ConnectTheme.colors.secondaryContainer)
+            .height(FenixTheme.dimensions.height.large)
+            .clip(shape = FenixTheme.shapes.large)
+            .background(FenixTheme.colors.secondaryContainer)
             .padding(
-                horizontal = ConnectTheme.dimensions.padding.normal,
-                vertical = ConnectTheme.dimensions.padding.small
+                horizontal = FenixTheme.dimensions.padding.normal,
+                vertical = FenixTheme.dimensions.padding.small
             )
     ) {
         Column(
@@ -44,18 +44,18 @@ fun ConnectCard(
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.Start
         ) {
-            ConnectIconButton(
+            FenixIconButton(
                 enabled = false,
                 onClick = { },
             ) {
-                ConnectIcon(icon = icon, tint = contentColor)
+                FenixIcon(icon = icon, tint = contentColor)
             }
-            ConnectText(
+            FenixText(
                 text = title,
                 color = contentColor,
-                style = ConnectTextStyle.Label
+                style = FenixTextStyle.Label
             )
-            ConnectText(
+            FenixText(
                 text = description, 
                 color = contentColor.copy(alpha = 0.5f)
             )
@@ -66,10 +66,10 @@ fun ConnectCard(
 
 @Preview
 @Composable
-private fun ConnectCardPreview() {
-    ConnectTheme {
-        ConnectCard(
-            icon = ConnectIcons.Bolt,
+private fun FenixCardPreview() {
+    FenixTheme {
+        FenixCard(
+            icon = FenixIcons.Bolt,
             title = "Title",
             description = "Description"
         )

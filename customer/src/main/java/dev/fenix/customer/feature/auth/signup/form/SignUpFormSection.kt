@@ -9,9 +9,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import dev.fenix.customer.R
-import dev.fenix.ui.component.button.ConnectButton
-import dev.fenix.ui.component.field.ConnectField
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.button.FenixButton
+import dev.fenix.ui.component.field.FenixField
+import dev.fenix.ui.core.form.asString
+import dev.fenix.ui.theme.FenixTheme
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.foundation.layout.size
 
@@ -23,10 +24,10 @@ fun SignUpFormSection(
     onSubmit: () -> Unit,
 ) {
     Column(
-        modifier = modifier.padding(ConnectTheme.dimensions.padding.medium),
-        verticalArrangement = Arrangement.spacedBy(ConnectTheme.dimensions.spacing.medium)
+        modifier = modifier.padding(FenixTheme.dimensions.padding.medium),
+        verticalArrangement = Arrangement.spacedBy(FenixTheme.dimensions.spacing.medium)
     ) {
-        ConnectField(
+        FenixField(
             label = stringResource(R.string.signup_screen_form_field_label_email),
             placeholder = stringResource(R.string.signup_screen_form_field_placeholder_email),
             enabled = !isLoading,
@@ -36,7 +37,7 @@ fun SignUpFormSection(
             errorMessage = form.email.error?.asString()
         )
 
-        ConnectField(
+        FenixField(
             label = stringResource(R.string.signup_screen_form_field_label_password),
             placeholder = stringResource(R.string.signup_screen_form_field_placeholder_password),
             enabled = !isLoading,
@@ -47,16 +48,16 @@ fun SignUpFormSection(
             errorMessage = form.password.error?.asString()
         )
 
-        ConnectButton(
+        FenixButton(
             label = stringResource(R.string.signup_screen_form_button_signup),
             enabled = !isLoading,
             onClick = onSubmit,
             leading = if (isLoading) {
                 { color ->
                     CircularProgressIndicator(
-                        modifier = Modifier.size(ConnectTheme.dimensions.icon.small),
+                        modifier = Modifier.size(FenixTheme.dimensions.icon.small),
                         color = color,
-                        strokeWidth = ConnectTheme.dimensions.border.small
+                        strokeWidth = FenixTheme.dimensions.border.small
                     )
                 }
             } else null
@@ -67,7 +68,7 @@ fun SignUpFormSection(
 @Preview(showBackground = true)
 @Composable
 private fun HeaderPreview() {
-    ConnectTheme {
+    FenixTheme {
         SignUpFormSection(
             form = SignUpFormGroup(),
             isLoading = true,

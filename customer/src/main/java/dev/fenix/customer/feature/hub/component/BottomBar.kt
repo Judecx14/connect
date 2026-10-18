@@ -2,16 +2,16 @@ package dev.fenix.customer.feature.hub.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.component.app_bar.navigation_bar.ConnectNavigationBar
-import dev.fenix.ui.component.icon.type.ConnectIcons
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.app_bar.navigation_bar.FenixNavigationBar
+import dev.fenix.ui.component.icon.type.FenixIcons
+import dev.fenix.ui.theme.FenixTheme
 
 @Composable
 fun BottomBar() {
-    ConnectNavigationBar(tonalElevation = ConnectTheme.dimensions.elevation.xs) {
+    FenixNavigationBar(tonalElevation = FenixTheme.dimensions.elevation.xs) {
         item(
             label = "Home",
-            icon = ConnectIcons.House,
+            icon = FenixIcons.House,
             selected = true,
             showLabel = true,
             onClick = {}
@@ -19,7 +19,7 @@ fun BottomBar() {
 
         item(
             label = "Requests",
-            icon = ConnectIcons.ListRestart,
+            icon = FenixIcons.ListRestart,
             selected = false,
             showLabel = false,
             onClick = {}
@@ -27,7 +27,7 @@ fun BottomBar() {
 
         item(
             label = "Settings",
-            icon = ConnectIcons.Bolt,
+            icon = FenixIcons.Bolt,
             selected = false,
             showLabel = false,
             onClick = {}
@@ -38,7 +38,7 @@ fun BottomBar() {
 @Preview
 @Composable
 private fun BottomBarPreview() {
-    ConnectTheme {
+    FenixTheme {
         BottomBar()
     }
 }

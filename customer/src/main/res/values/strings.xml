@@ -13,8 +13,6 @@
     <string name="login_screen_form_button_login">Iniciar sesion</string>
     <string name="login_screen_form_signup_footer_button">Registrarse</string>
     <string name="login_screen_form_signup_footer_question">¿No tienes cuenta?</string>
-    <string name="login_screen_form_error_empty">* Este campo no puede estar vacío</string>
-    <string name="login_screen_form_error_invalid_email">* Ingresa un correo electrónico válido</string>
 
     <!-- SignUp Screen -->
     <string name="signup_screen_top_bar_title">Crear una cuenta</string>
@@ -25,17 +23,9 @@
     <string name="signup_screen_form_field_label_password">Contrasena</string>
     <string name="signup_screen_form_field_placeholder_password">Escribe tu contrasena</string>
     <string name="signup_screen_form_button_signup">Registrarse</string>
-    <string name="signup_screen_form_error_empty">* Este campo no puede estar vacío</string>
-    <string name="signup_screen_form_error_invalid_email">* Ingresa un correo electrónico válido</string>
-    <string name="signup_screen_form_error_password_short">* La contraseña debe tener al menos 6 caracteres</string>
 
     <!-- Global Errors -->
-    <string name="error_no_internet">No hay conexión a internet.</string>
-    <string name="error_gps_disabled">Por favor, activa el GPS.</string>
-    <string name="error_bad_request">Ocurrió un error con tu solicitud. Verifica tus credenciales e inténtalo de nuevo.</string>
-    <string name="error_server">Error en el servidor. Inténtalo más tarde.</string>
     <string name="error_invalid_credentials">El correo electrónico o la contraseña son incorrectos.</string>
     <string name="error_user_not_found">No existe una cuenta registrada con este correo electrónico.</string>
     <string name="error_email_already_in_use">Este correo electrónico ya se encuentra registrado.</string>
-    <string name="error_unknown">Ocurrió un error desconocido. Inténtalo más tarde.</string>
 </resources>

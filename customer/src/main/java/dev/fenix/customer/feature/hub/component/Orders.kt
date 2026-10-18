@@ -14,31 +14,31 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.component.icon.ConnectIcon
-import dev.fenix.ui.component.icon.type.ConnectIcons
-import dev.fenix.ui.component.text.ConnectText
-import dev.fenix.ui.component.text.type.ConnectTextStyle
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.icon.FenixIcon
+import dev.fenix.ui.component.icon.type.FenixIcons
+import dev.fenix.ui.component.text.FenixText
+import dev.fenix.ui.component.text.type.FenixTextStyle
+import dev.fenix.ui.theme.FenixTheme
 
 @Composable
 fun EmptyOrdes(
     modifier: Modifier = Modifier
 ) {
-    val contentColor = ConnectTheme.colors.onSurface.copy(alpha = 0.5f)
+    val contentColor = FenixTheme.colors.onSurface.copy(alpha = 0.5f)
 
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.Center
     ) {
-        ConnectText(
+        FenixText(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    horizontal = ConnectTheme.dimensions.padding.medium,
+                    horizontal = FenixTheme.dimensions.padding.medium,
                 ),
             text = "Sin pedidos activos",
             align = TextAlign.Center,
-            style = ConnectTextStyle.Label,
+            style = FenixTextStyle.Label,
             color = contentColor
         )
 
@@ -47,29 +47,29 @@ fun EmptyOrdes(
                 .fillMaxWidth()
                 .wrapContentHeight()
                 .padding(
-                    vertical = ConnectTheme.dimensions.padding.normal
+                    vertical = FenixTheme.dimensions.padding.normal
                 ),
             contentAlignment = Alignment.Center
         ) {
-            ConnectIcon(
+            FenixIcon(
                 modifier = Modifier
-                    .width(ConnectTheme.dimensions.icon.xxl)
-                    .height(ConnectTheme.dimensions.icon.xxl),
-                icon = ConnectIcons.StickyNotePlus,
+                    .width(FenixTheme.dimensions.icon.xxl)
+                    .height(FenixTheme.dimensions.icon.xxl),
+                icon = FenixIcons.StickyNotePlus,
                 tint = contentColor
             )
         }
 
-        ConnectText(
+        FenixText(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    horizontal = ConnectTheme.dimensions.padding.medium,
+                    horizontal = FenixTheme.dimensions.padding.medium,
                 ),
             align = TextAlign.Center,
             text =
                 "No cuentas con pedidos en curso en este momento. Para visualizar información, es necesario que generes un pedido",
-            style = ConnectTextStyle.Body,
+            style = FenixTextStyle.Body,
             color = contentColor
         )
     }
@@ -80,13 +80,13 @@ fun Orders(
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
-        ConnectText(
+        FenixText(
             modifier = Modifier.padding(
-                horizontal = ConnectTheme.dimensions.padding.medium,
-                vertical = ConnectTheme.dimensions.padding.large
+                horizontal = FenixTheme.dimensions.padding.medium,
+                vertical = FenixTheme.dimensions.padding.large
             ),
             text = "Pedidos activos",
-            style = ConnectTextStyle.Headline,
+            style = FenixTextStyle.Headline,
         )
 
         EmptyOrdes(
@@ -98,7 +98,7 @@ fun Orders(
 @Preview(showBackground = true)
 @Composable
 private fun OrdersPreview() {
-    ConnectTheme {
+    FenixTheme {
         Orders()
     }
 }

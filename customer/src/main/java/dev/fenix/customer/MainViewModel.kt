@@ -2,7 +2,7 @@ package dev.fenix.customer
 
 import androidx.lifecycle.ViewModel
 import com.fenix.domain.model.auth.AuthState
-import com.fenix.domain.model.resource.bind
+import dev.fenix.core.resource.bind
 import com.fenix.domain.use_case.auth.CurrentAuthState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

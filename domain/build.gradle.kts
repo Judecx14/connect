@@ -18,4 +18,7 @@ dependencies {
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
+
+    // Core
+    api(project(":core"))
 }

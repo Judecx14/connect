@@ -6,7 +6,7 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import dev.fenix.customer.feature.auth.login.LoginScreen
 import dev.fenix.customer.feature.auth.signup.SignUpScreen
-import dev.fenix.ui.transition.ConnectTransition
+import dev.fenix.ui.transition.FenixTransition
 import dev.fenix.customer.navigation.Route.*
 import dev.fenix.customer.feature.hub.HubScreen
 
@@ -19,9 +19,9 @@ fun Navigator(
     NavDisplay(
         backStack = backStack,
         onBack = { backStack.back() },
-        transitionSpec = { ConnectTransition.slideRight },
-        popTransitionSpec = { ConnectTransition.slideLeft },
-        predictivePopTransitionSpec = { ConnectTransition.slideLeft },
+        transitionSpec = { FenixTransition.slideRight },
+        popTransitionSpec = { FenixTransition.slideLeft },
+        predictivePopTransitionSpec = { FenixTransition.slideLeft },
         entryProvider = entryProvider {
             entry<Login> {
                 LoginScreen(

@@ -31,6 +31,8 @@ android {
 dependencies {
     // Android core
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.kotlinx.coroutines.core)
 
     // Compose
     implementation(platform(libs.androidx.compose.bom))
@@ -38,6 +40,9 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
+
+    // Core
+    api(project(":core"))
 
     // Testing
     testImplementation(libs.junit)

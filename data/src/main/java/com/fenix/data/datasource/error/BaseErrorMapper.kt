@@ -1,6 +1,6 @@
 package com.fenix.data.datasource.error
 
-import com.fenix.domain.model.resource.FailureReason
+import dev.fenix.core.resource.FailureReason
 import okio.IOException
 import retrofit2.HttpException
 

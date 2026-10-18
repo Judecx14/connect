@@ -1,4 +1,4 @@
-package com.fenix.domain.model.resource
+package dev.fenix.core.resource
 
 sealed class Resource<out T, out E> {
     data class Success<T>(val data: T) : Resource<T, Nothing>()

@@ -9,11 +9,11 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.component.card.ConnectCard
-import dev.fenix.ui.component.icon.type.ConnectIcons
-import dev.fenix.ui.component.text.ConnectText
-import dev.fenix.ui.component.text.type.ConnectTextStyle
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.card.FenixCard
+import dev.fenix.ui.component.icon.type.FenixIcons
+import dev.fenix.ui.component.text.FenixText
+import dev.fenix.ui.component.text.type.FenixTextStyle
+import dev.fenix.ui.theme.FenixTheme
 import dev.fenix.ui.theme.token.color_scheme.Colors
 
 
@@ -24,33 +24,33 @@ fun Categories(
     val contentColor = Colors.Dark.onSurface
 
     Column(modifier = modifier) {
-        ConnectText(
+        FenixText(
             modifier = Modifier.padding(
-                horizontal = ConnectTheme.dimensions.padding.medium,
-                vertical = ConnectTheme.dimensions.padding.large
+                horizontal = FenixTheme.dimensions.padding.medium,
+                vertical = FenixTheme.dimensions.padding.large
             ),
             text = "Categorias",
             color = contentColor,
-            style = ConnectTextStyle.Headline,
+            style = FenixTextStyle.Headline,
         )
 
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = ConnectTheme.dimensions.padding.normal),
+                .padding(horizontal = FenixTheme.dimensions.padding.normal),
             horizontalArrangement = Arrangement.spacedBy(
-                ConnectTheme.dimensions.padding.normal
+                FenixTheme.dimensions.padding.normal
             )
         ) {
-            ConnectCard(
+            FenixCard(
                 modifier = Modifier.weight(1f),
-                icon = ConnectIcons.Zap,
+                icon = FenixIcons.Zap,
                 title = "Pedido rapido",
                 description = "Menos de 30 minutos"
             )
-            ConnectCard(
+            FenixCard(
                 modifier = Modifier.weight(1f),
-                icon = ConnectIcons.Store,
+                icon = FenixIcons.Store,
                 title = "Mandado",
                 description = "Solicita un pedido mas complejo"
             )
@@ -61,7 +61,7 @@ fun Categories(
 @Preview
 @Composable
 private fun CategoriesPreview() {
-    ConnectTheme {
+    FenixTheme {
         Categories()
     }
 }

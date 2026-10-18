@@ -12,25 +12,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import dev.fenix.customer.common.ObserveFlowAsEvent
+import dev.fenix.ui.core.effect.ObserveFlowAsEvent
 import dev.fenix.customer.feature.hub.component.BottomBar
 import dev.fenix.customer.feature.hub.component.Categories
 import dev.fenix.customer.feature.hub.component.Orders
 import dev.fenix.customer.feature.hub.component.TopBar
 import dev.fenix.ui.modifier.ambient_glow.ambientGlow
 import dev.fenix.ui.modifier.ambient_glow.model.Position
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.theme.FenixTheme
 
 @Composable
 private fun Content(
     currentLocation: String,
     logout: () -> Unit,
 ) {
-    val colorPrimary = ConnectTheme.colors.primary
+    val colorPrimary = FenixTheme.colors.primary
 
     Scaffold(
         modifier = Modifier
-            .ambientGlow(background = ConnectTheme.colors.background) {
+            .ambientGlow(background = FenixTheme.colors.background) {
                 spot(
                     color = colorPrimary,
                     x = Position.Start,
@@ -87,7 +87,7 @@ fun HubScreen(
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
 private fun HubScreenPreviewLight() {
-    ConnectTheme {
+    FenixTheme {
         Content(
             currentLocation = "Street #123 Boulevard Example between",
             logout = {}
@@ -98,7 +98,7 @@ private fun HubScreenPreviewLight() {
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun HubScreenPreviewNight() {
-    ConnectTheme {
+    FenixTheme {
         Content(
             currentLocation = "Street #123 Boulevard Example between",
             logout = {}

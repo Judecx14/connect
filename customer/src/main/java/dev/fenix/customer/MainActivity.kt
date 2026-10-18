@@ -11,7 +11,7 @@ import com.fenix.domain.model.auth.AuthState
 import dagger.hilt.android.AndroidEntryPoint
 import dev.fenix.customer.navigation.Navigator
 import dev.fenix.customer.navigation.Route
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.theme.FenixTheme
 import kotlin.getValue
 import androidx.activity.SystemBarStyle
 import android.graphics.Color
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
         )
 
         setContent {
-            ConnectTheme {
+            FenixTheme {
                 val authState by mainViewModel.authState.collectAsStateWithLifecycle()
 
                 when (authState) {

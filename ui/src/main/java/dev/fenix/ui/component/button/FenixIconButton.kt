@@ -15,13 +15,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.theme.FenixTheme
 import dev.fenix.ui.component.button.colors.buildIconButtonColors
 import dev.fenix.ui.core.type.Emphasis
 import dev.fenix.ui.component.button.type.Variant
 
 @Composable
-fun ConnectIconButton(
+fun FenixIconButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     enabled: Boolean = true,
@@ -30,11 +30,11 @@ fun ConnectIconButton(
     content: @Composable (color: Color) -> Unit,
 ) {
     val buttonColors = buildIconButtonColors(variant = variant, emphasis = emphasis)
-    val shape = ConnectTheme.shapes.large
+    val shape = FenixTheme.shapes.large
 
     val setupModifier = modifier
-        .width(ConnectTheme.dimensions.button.medium)
-        .height(ConnectTheme.dimensions.button.medium)
+        .width(FenixTheme.dimensions.button.medium)
+        .height(FenixTheme.dimensions.button.medium)
 
     when (variant) {
         Variant.Filled -> {
@@ -57,7 +57,7 @@ fun ConnectIconButton(
                 shape = shape,
                 colors = buttonColors,
                 border = BorderStroke(
-                    width = ConnectTheme.dimensions.border.xs,
+                    width = FenixTheme.dimensions.border.xs,
                     color = buttonColors.contentColor
                 )
             ) {
@@ -82,20 +82,20 @@ fun ConnectIconButton(
 @Preview(showBackground = true)
 @Composable
 private fun PrimaryPreview() {
-    ConnectTheme {
+    FenixTheme {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(ConnectTheme.dimensions.padding.normal),
+                .padding(FenixTheme.dimensions.padding.normal),
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
-            ConnectIconButton(
+            FenixIconButton(
                 onClick = {},
             ) {
                 Text("I")
             }
 
-            ConnectIconButton(
+            FenixIconButton(
                 onClick = {},
                 variant = Variant.Outlined
             ) {
@@ -103,7 +103,7 @@ private fun PrimaryPreview() {
             }
 
 
-            ConnectIconButton(
+            FenixIconButton(
                 onClick = {},
                 variant = Variant.Ghost
             ) {
@@ -112,14 +112,14 @@ private fun PrimaryPreview() {
 
             // Secondary
 
-            ConnectIconButton(
+            FenixIconButton(
                 onClick = {},
                 emphasis = Emphasis.Secondary
             ) {
                 Text("I")
             }
 
-            ConnectIconButton(
+            FenixIconButton(
                 onClick = {},
                 variant = Variant.Outlined,
                 emphasis = Emphasis.Secondary
@@ -128,7 +128,7 @@ private fun PrimaryPreview() {
             }
 
 
-            ConnectIconButton(
+            FenixIconButton(
                 onClick = {},
                 variant = Variant.Ghost,
                 emphasis = Emphasis.Secondary

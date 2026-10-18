@@ -5,8 +5,8 @@ import android.location.Address
 import android.location.Geocoder
 import android.os.Build
 import android.os.Looper
-import com.fenix.domain.model.resource.FailureReason
-import com.fenix.domain.model.resource.Resource
+import dev.fenix.core.resource.FailureReason
+import dev.fenix.core.resource.Resource
 import com.fenix.domain.repository.location.LocationRepository
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback

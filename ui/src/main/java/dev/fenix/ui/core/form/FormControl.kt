@@ -11,7 +11,7 @@ typealias Validator<V, E> = (V) -> E?
 
 /**
  * Represents a single form field.
- * Manages its own StateFlow, value, errors, and validation logic.
+ * Manages its own Compose state: value, error, and validation logic.
  */
 class FormControl<V, E>(
     val initialValue: V,

@@ -1,9 +1,10 @@
 package dev.fenix.customer.feature.auth.signup.form
 
-import android.util.Patterns
 import dev.fenix.ui.core.form.FormControl
 import dev.fenix.ui.core.form.FormGroup
-
+import dev.fenix.ui.core.form.FormValidators.email
+import dev.fenix.ui.core.form.FormValidators.minLength
+import dev.fenix.ui.core.form.FormValidators.required
 import javax.inject.Inject
 
 class SignUpFormGroup @Inject constructor() : FormGroup() {
@@ -11,8 +12,8 @@ class SignUpFormGroup @Inject constructor() : FormGroup() {
     val email = FormControl(
         initialValue = "",
         validators = listOf(
-            { value -> if (value.isBlank()) SignUpFormControlError.Empty else null },
-            { value -> if (!Patterns.EMAIL_ADDRESS.matcher(value).matches()) SignUpFormControlError.InvalidEmail else null }
+            required(),
+            email()
         ),
         validateOnChange = true
     )
@@ -20,8 +21,8 @@ class SignUpFormGroup @Inject constructor() : FormGroup() {
     val password = FormControl(
         initialValue = "",
         validators = listOf(
-            { value -> if (value.isBlank()) SignUpFormControlError.Empty else null },
-            { value -> if (value.length < 6) SignUpFormControlError.PasswordTooShort else null }
+            required(),
+            minLength(6)
         ),
         validateOnChange = true
     )

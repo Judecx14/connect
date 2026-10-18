@@ -15,16 +15,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.fenix.customer.R
-import dev.fenix.customer.common.ObserveFlowAsEvent
+import dev.fenix.ui.core.effect.ObserveFlowAsEvent
 import dev.fenix.customer.feature.auth.signup.form.SignUpFormSection
 import dev.fenix.customer.feature.auth.signup.component.Header
 import dev.fenix.customer.feature.auth.signup.form.SignUpFormGroup
-import dev.fenix.ui.component.app_bar.ConnectTopBar
-import dev.fenix.ui.component.button.ConnectIconButton
+import dev.fenix.ui.component.app_bar.FenixTopBar
+import dev.fenix.ui.component.button.FenixIconButton
 import dev.fenix.ui.component.button.type.Variant
-import dev.fenix.ui.component.icon.ConnectIcon
-import dev.fenix.ui.component.icon.type.ConnectIcons
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.icon.FenixIcon
+import dev.fenix.ui.component.icon.type.FenixIcons
+import dev.fenix.ui.theme.FenixTheme
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.runtime.remember
@@ -43,14 +43,14 @@ private fun Content(
 ) {
     Scaffold(
         topBar = {
-            ConnectTopBar(
+            FenixTopBar(
                 title = stringResource(R.string.signup_screen_top_bar_title),
                 leading = {
-                    ConnectIconButton(
+                    FenixIconButton(
                         onClick = navigateToBack,
                         variant = Variant.Outlined
                     ) {
-                        ConnectIcon(icon = ConnectIcons.ChevronLeft)
+                        FenixIcon(icon = FenixIcons.ChevronLeft)
                     }
                 }
             )
@@ -112,7 +112,7 @@ fun SignUpScreen(
 @Preview
 @Composable
 private fun SignUpScreenPreview() {
-    ConnectTheme {
+    FenixTheme {
         Content(
             uiState = SignUiState(),
             form = SignUpFormGroup(),

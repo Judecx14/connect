@@ -1,4 +1,4 @@
-package dev.fenix.customer.common
+package dev.fenix.ui.core.effect
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

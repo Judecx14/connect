@@ -17,10 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.theme.FenixTheme
 import dev.fenix.ui.component.button.colors.buildButtonColors
-import dev.fenix.ui.component.text.ConnectText
-import dev.fenix.ui.component.text.type.ConnectTextStyle
+import dev.fenix.ui.component.text.FenixText
+import dev.fenix.ui.component.text.type.FenixTextStyle
 import dev.fenix.ui.core.type.Emphasis
 import dev.fenix.ui.component.button.type.Variant
 
@@ -29,7 +29,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.width
 
 @Composable
-private fun ConnectButtonContent(
+private fun FenixButtonContent(
     modifier: Modifier = Modifier,
     label: String,
     leading: @Composable (() -> Unit)? = null,
@@ -42,25 +42,25 @@ private fun ConnectButtonContent(
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Box(
-            modifier = Modifier.width(ConnectTheme.dimensions.icon.large),
+            modifier = Modifier.width(FenixTheme.dimensions.icon.large),
             contentAlignment = Alignment.Center
         ) {
             leading?.invoke()
         }
 
-        ConnectText(
+        FenixText(
             modifier = Modifier
                 .weight(1f)
-                .padding(horizontal = ConnectTheme.dimensions.spacing.small),
+                .padding(horizontal = FenixTheme.dimensions.spacing.small),
             text = label,
             align = TextAlign.Center,
-            style = ConnectTextStyle.Label,
+            style = FenixTextStyle.Label,
             color = color,
             maxLines = 1
         )
 
         Box(
-            modifier = Modifier.width(ConnectTheme.dimensions.icon.large),
+            modifier = Modifier.width(FenixTheme.dimensions.icon.large),
             contentAlignment = Alignment.Center
         ) {
             trailing?.invoke()
@@ -69,7 +69,7 @@ private fun ConnectButtonContent(
 }
 
 @Composable
-fun ConnectButton(
+fun FenixButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     label: String,
@@ -80,10 +80,10 @@ fun ConnectButton(
     variant: Variant = Variant.Filled,
 ) {
     val buttonColors = buildButtonColors(variant = variant, emphasis = emphasis)
-    val shape = ConnectTheme.shapes.medium
+    val shape = FenixTheme.shapes.medium
 
     val setupModifier = modifier
-        .height(ConnectTheme.dimensions.button.medium)
+        .height(FenixTheme.dimensions.button.medium)
         .fillMaxWidth()
 
     when (variant) {
@@ -95,7 +95,7 @@ fun ConnectButton(
                 shape = shape,
                 colors = buttonColors
             ) {
-                ConnectButtonContent(
+                FenixButtonContent(
                     label = label,
                     leading = {
                         leading?.invoke(buttonColors.contentColor)
@@ -116,7 +116,7 @@ fun ConnectButton(
                 shape = shape,
                 colors = buttonColors
             ) {
-                ConnectButtonContent(
+                FenixButtonContent(
                     label = label,
                     leading = {
                         leading?.invoke(buttonColors.contentColor)
@@ -137,7 +137,7 @@ fun ConnectButton(
                 shape = shape,
                 colors = buttonColors
             ) {
-                ConnectButtonContent(
+                FenixButtonContent(
                     label = label,
                     leading = {
                         leading?.invoke(buttonColors.contentColor)
@@ -155,21 +155,21 @@ fun ConnectButton(
 @Preview(showBackground = true)
 @Composable
 private fun PrimaryPreview() {
-    ConnectTheme {
+    FenixTheme {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(ConnectTheme.dimensions.padding.normal),
+                .padding(FenixTheme.dimensions.padding.normal),
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
-            ConnectButton(
+            FenixButton(
                 onClick = {},
                 label = "Primary",
                 leading = { Text("L") },
                 trailing = { Text("R") }
             )
 
-            ConnectButton(
+            FenixButton(
                 onClick = {},
                 label = "Primary Outlined",
                 leading = { Text("L") },
@@ -178,7 +178,7 @@ private fun PrimaryPreview() {
             )
 
 
-            ConnectButton(
+            FenixButton(
                 onClick = {},
                 label = "Primary Ghost",
                 leading = { Text("L") },
@@ -188,7 +188,7 @@ private fun PrimaryPreview() {
 
             // Secondary
 
-            ConnectButton(
+            FenixButton(
                 onClick = {},
                 label = "Primary",
                 leading = { Text("L") },
@@ -196,7 +196,7 @@ private fun PrimaryPreview() {
                 emphasis = Emphasis.Secondary
             )
 
-            ConnectButton(
+            FenixButton(
                 onClick = {},
                 label = "Primary Outlined",
                 leading = { Text("L") },
@@ -206,7 +206,7 @@ private fun PrimaryPreview() {
             )
 
 
-            ConnectButton(
+            FenixButton(
                 onClick = {},
                 label = "Primary Ghost",
                 leading = { Text("L") },

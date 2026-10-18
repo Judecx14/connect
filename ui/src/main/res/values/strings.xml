@@ -1,0 +1,16 @@
+<resources>
+    <!-- Global Errors -->
+    <string name="error_no_internet">No hay conexión a internet.</string>
+    <string name="error_gps_disabled">Por favor, activa el GPS.</string>
+    <string name="error_bad_request">Ocurrió un error con tu solicitud. Verifica tus credenciales e inténtalo de nuevo.</string>
+    <string name="error_server">Error en el servidor. Inténtalo más tarde.</string>
+    <string name="error_unknown">Ocurrió un error desconocido. Inténtalo más tarde.</string>
+
+    <!-- Form Errors -->
+    <string name="form_error_empty">* Este campo no puede estar vacío</string>
+    <string name="form_error_invalid_email">* Ingresa un correo electrónico válido</string>
+    <string name="form_error_min_length">* Debe tener al menos %1$d caracteres</string>
+    <string name="form_error_not_a_number">* Ingresa un número válido</string>
+    <string name="form_error_min_value">* El valor mínimo es %1$s</string>
+    <string name="form_error_max_value">* El valor máximo es %1$s</string>
+</resources>

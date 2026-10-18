@@ -1,12 +1,12 @@
 package com.fenix.data.repository.auth
 
-import com.fenix.data.datasource.api.safeCall
+import dev.fenix.core.resource.safeCall
 import com.fenix.data.datasource.error.mapFirebaseAuthException
 import com.fenix.domain.model.auth.AuthState
 import com.fenix.domain.model.auth.AuthCredentials
 import com.fenix.domain.model.auth.SignUpInput
-import com.fenix.domain.model.resource.FailureReason
-import com.fenix.domain.model.resource.Resource
+import dev.fenix.core.resource.FailureReason
+import dev.fenix.core.resource.Resource
 import com.fenix.domain.repository.auth.AuthRepository
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.tasks.await

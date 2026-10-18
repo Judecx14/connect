@@ -61,6 +61,9 @@ dependencies {
     // Serailization Error REMOVE
     implementation(libs.androidx.annotation.experimental)
 
+    // core
+    implementation(project(":core"))
+
     // domain
     implementation(project(":domain"))
 }

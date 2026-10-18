@@ -1,10 +1,10 @@
 package dev.fenix.ui.component.app_bar.navigation_bar.model
 
-import dev.fenix.ui.component.icon.type.ConnectIcons
+import dev.fenix.ui.component.icon.type.FenixIcons
 
-data class ConnectNavigationBarItem(
+data class FenixNavigationBarItem(
     val label: String,
-    val icon: ConnectIcons,
+    val icon: FenixIcons,
     val selected: Boolean,
     val showLabel: Boolean,
     val onClick: () -> Unit
@@ -13,12 +13,12 @@ data class ConnectNavigationBarItem(
 class Scope {
     private val MAX_ITEMS_LENGTH = 4
 
-    private val _items = mutableListOf<ConnectNavigationBarItem>()
-    val items: List<ConnectNavigationBarItem> = _items
+    private val _items = mutableListOf<FenixNavigationBarItem>()
+    val items: List<FenixNavigationBarItem> = _items
 
     fun item(
         label: String,
-        icon: ConnectIcons,
+        icon: FenixIcons,
         selected: Boolean,
         showLabel: Boolean,
         onClick: () -> Unit
@@ -26,7 +26,7 @@ class Scope {
         if (_items.size == MAX_ITEMS_LENGTH) return
 
         _items.add(
-            ConnectNavigationBarItem(
+            FenixNavigationBarItem(
                 label = label,
                 icon = icon,
                 selected = selected,

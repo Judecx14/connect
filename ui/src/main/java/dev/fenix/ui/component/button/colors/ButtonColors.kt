@@ -5,20 +5,20 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.IconButtonColors
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.runtime.Composable
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.theme.FenixTheme
 import dev.fenix.ui.core.type.Emphasis
 import dev.fenix.ui.component.button.type.Variant
 
 @Composable
 private fun Emphasis.toContainerColor() = when (this) {
-    Emphasis.Primary -> ConnectTheme.colors.primary
-    Emphasis.Secondary -> ConnectTheme.colors.secondary
+    Emphasis.Primary -> FenixTheme.colors.primary
+    Emphasis.Secondary -> FenixTheme.colors.secondary
 }
 
 @Composable
 private fun Emphasis.toContentColor() = when (this) {
-    Emphasis.Primary -> ConnectTheme.colors.onPrimary
-    Emphasis.Secondary -> ConnectTheme.colors.onSecondary
+    Emphasis.Primary -> FenixTheme.colors.onPrimary
+    Emphasis.Secondary -> FenixTheme.colors.onSecondary
 }
 
 @Composable

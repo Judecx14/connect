@@ -1,11 +1,12 @@
 package com.fenix.data.repository.user
 
-import com.fenix.data.datasource.api.safeCall
+import dev.fenix.core.resource.safeCall
 import com.fenix.data.datasource.api.user.UserApi
+import com.fenix.data.datasource.error.mapToBaseFailureReason
 import com.fenix.data.model.user.request.toRequest
 import com.fenix.data.model.user.response.toUser
-import com.fenix.domain.model.resource.FailureReason
-import com.fenix.domain.model.resource.Resource
+import dev.fenix.core.resource.FailureReason
+import dev.fenix.core.resource.Resource
 import com.fenix.domain.model.user.CreateUserInput
 import com.fenix.domain.model.user.User
 import com.fenix.domain.repository.user.UserRepository
@@ -20,7 +21,8 @@ class UserRepositoryImpl @Inject constructor(
 
         return safeCall(
             call = { userApi.create(payloadRequest) },
-            onSuccess = { response -> response.toUser() }
+            onSuccess = { response -> response.toUser() },
+            onFailure = { throwable -> mapToBaseFailureReason(throwable) }
         )
     }
 }

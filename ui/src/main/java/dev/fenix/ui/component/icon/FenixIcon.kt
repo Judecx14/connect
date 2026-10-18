@@ -7,12 +7,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.component.icon.type.ConnectIcons
+import dev.fenix.ui.component.icon.type.FenixIcons
 
 @Composable
-fun ConnectIcon(
+fun FenixIcon(
     modifier: Modifier = Modifier,
-    icon: ConnectIcons,
+    icon: FenixIcons,
     tint: Color = LocalContentColor.current,
     contentDescription: String = "",
 ) {
@@ -27,6 +27,6 @@ fun ConnectIcon(
 
 @Preview(showBackground = true)
 @Composable
-private fun ConnectIconPreview() {
-    ConnectIcon(icon = ConnectIcons.ChevronLeft)
+private fun FenixIconPreview() {
+    FenixIcon(icon = FenixIcons.ChevronLeft)
 }

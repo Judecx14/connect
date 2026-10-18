@@ -9,9 +9,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import dev.fenix.customer.R
-import dev.fenix.ui.component.button.ConnectButton
-import dev.fenix.ui.component.field.ConnectField
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.button.FenixButton
+import dev.fenix.ui.component.field.FenixField
+import dev.fenix.ui.core.form.asString
+import dev.fenix.ui.theme.FenixTheme
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.foundation.layout.size
 
@@ -24,10 +25,10 @@ fun LoginFormSection(
 ) {
 
     Column(
-        modifier = modifier.padding(ConnectTheme.dimensions.padding.medium),
-        verticalArrangement = Arrangement.spacedBy(ConnectTheme.dimensions.spacing.medium)
+        modifier = modifier.padding(FenixTheme.dimensions.padding.medium),
+        verticalArrangement = Arrangement.spacedBy(FenixTheme.dimensions.spacing.medium)
     ) {
-        ConnectField(
+        FenixField(
             value = form.email.value,
             onChange = { form.email.onChange(it) },
             label = stringResource(R.string.login_screen_form_field_label_email),
@@ -37,7 +38,7 @@ fun LoginFormSection(
             errorMessage = form.email.error?.asString()
         )
 
-        ConnectField(
+        FenixField(
             value = form.password.value,
             onChange = { form.password.onChange(it) },
             label = stringResource(R.string.login_screen_form_field_label_password),
@@ -48,7 +49,7 @@ fun LoginFormSection(
             errorMessage = form.password.error?.asString()
         )
 
-        ConnectButton(
+        FenixButton(
             onClick = onSubmit,
             label = stringResource(R.string.login_screen_form_button_login),
             enabled = !isLoading,
@@ -67,7 +68,7 @@ fun LoginFormSection(
 @Preview(showBackground = true)
 @Composable
 private fun LoginFormSectionPreview() {
-    ConnectTheme {
+    FenixTheme {
         LoginFormSection(
             form = LoginFormGroup(),
             isLoading = true,

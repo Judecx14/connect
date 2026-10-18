@@ -10,10 +10,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import dev.fenix.customer.R
-import dev.fenix.ui.component.button.ConnectButton
+import dev.fenix.ui.component.button.FenixButton
 import dev.fenix.ui.component.button.type.Variant
-import dev.fenix.ui.component.text.ConnectText
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.text.FenixText
+import dev.fenix.ui.theme.FenixTheme
 
 @Composable
 fun SignUpFooter(
@@ -25,9 +25,9 @@ fun SignUpFooter(
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        ConnectText(text = stringResource(R.string.login_screen_form_signup_footer_question))
-        ConnectButton(
-            modifier = Modifier.width(ConnectTheme.dimensions.button.xl),
+        FenixText(text = stringResource(R.string.login_screen_form_signup_footer_question))
+        FenixButton(
+            modifier = Modifier.width(FenixTheme.dimensions.button.xl),
             label = stringResource(R.string.login_screen_form_signup_footer_button),
             onClick = { navigateToSignUp() },
             variant = Variant.Ghost
@@ -38,7 +38,7 @@ fun SignUpFooter(
 @Preview(showBackground = true)
 @Composable
 private fun AuthByPreview() {
-    ConnectTheme {
+    FenixTheme {
         SignUpFooter { }
     }
 }

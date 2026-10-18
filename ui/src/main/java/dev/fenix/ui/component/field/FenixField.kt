@@ -15,12 +15,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.theme.ConnectTheme
-import dev.fenix.ui.component.text.ConnectText
+import dev.fenix.ui.theme.FenixTheme
+import dev.fenix.ui.component.text.FenixText
 import androidx.compose.ui.graphics.SolidColor
 
 @Composable
-fun ConnectField(
+fun FenixField(
     modifier: Modifier = Modifier,
     value: String,
     label: String? = null,
@@ -44,18 +44,18 @@ fun ConnectField(
 
     Column(
         modifier = modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(ConnectTheme.dimensions.spacing.normal)
+        verticalArrangement = Arrangement.spacedBy(FenixTheme.dimensions.spacing.normal)
     ) {
         label?.let { text ->
-            ConnectText(text = text)
+            FenixText(text = text)
         }
 
         BasicTextField(
             modifier = Modifier.fillMaxWidth(),
             interactionSource = interactionSource,
             visualTransformation = visualTransformation,
-            textStyle = ConnectTheme.typography.bodyLarge.copy(color = ConnectTheme.colors.onSurface),
-            cursorBrush = SolidColor(ConnectTheme.colors.primary),
+            textStyle = FenixTheme.typography.bodyLarge.copy(color = FenixTheme.colors.onSurface),
+            cursorBrush = SolidColor(FenixTheme.colors.primary),
 
             value = value,
             onValueChange = { change -> onChange(change) },
@@ -71,21 +71,21 @@ fun ConnectField(
                     isError = hasError,
 
                     placeholder = placeholder?.let { text ->
-                        { ConnectText(text = text) }
+                        { FenixText(text = text) }
                     },
 
                     leadingIcon = leading?.let { component ->
                         {
-                            component(ConnectTheme.colors.primary)
+                            component(FenixTheme.colors.primary)
                         }
                     },
                     trailingIcon = trailing?.let { component ->
                         {
-                            component(ConnectTheme.colors.primary)
+                            component(FenixTheme.colors.primary)
                         }
                     },
 
-                    shape = ConnectTheme.shapes.medium,
+                    shape = FenixTheme.shapes.medium,
                     colors = colors
                 )
             },
@@ -95,11 +95,11 @@ fun ConnectField(
 
         if (hasError && errorMessage != null) {
             Row(
-                modifier = modifier.padding(horizontal = ConnectTheme.dimensions.padding.normal)
+                modifier = modifier.padding(horizontal = FenixTheme.dimensions.padding.normal)
             ) {
-                ConnectText(
+                FenixText(
                     text = errorMessage,
-                    color = ConnectTheme.colors.error,
+                    color = FenixTheme.colors.error,
                 )
             }
         }
@@ -108,20 +108,20 @@ fun ConnectField(
 
 @Preview(showBackground = true)
 @Composable
-private fun ConnectFieldPreview() {
-    ConnectTheme {
-        Column(verticalArrangement = Arrangement.spacedBy(ConnectTheme.dimensions.spacing.normal)) {
-            ConnectField(
+private fun FenixFieldPreview() {
+    FenixTheme {
+        Column(verticalArrangement = Arrangement.spacedBy(FenixTheme.dimensions.spacing.normal)) {
+            FenixField(
                 value = "", placeholder = "Write your email"
             ) {}
 
-            ConnectField(
+            FenixField(
                 label = "Password",
                 value = "password",
                 visualTransformation = PasswordVisualTransformation()
             ) {}
 
-            ConnectField(
+            FenixField(
                 value = "", placeholder = "Error",
                 hasError = true,
                 errorMessage = "This is a error!"

@@ -1,13 +1,18 @@
-package com.fenix.data.datasource.api
+package dev.fenix.core.resource
 
-import com.fenix.data.datasource.error.mapToBaseFailureReason
-import com.fenix.domain.model.resource.FailureReason
-import com.fenix.domain.model.resource.Resource
+import java.io.IOException
 
-internal inline fun <R, T> safeCall(
+fun mapToDefaultFailureReason(throwable: Throwable): FailureReason {
+    return when (throwable) {
+        is IOException -> FailureReason.Hardware.NoInternet
+        else -> FailureReason.Unknown
+    }
+}
+
+inline fun <R, T> safeCall(
     call: () -> R,
     onSuccess: (R) -> T,
-    onFailure: (Throwable) -> FailureReason = { throwable -> mapToBaseFailureReason(throwable) }
+    onFailure: (Throwable) -> FailureReason = { throwable -> mapToDefaultFailureReason(throwable) }
 ): Resource<T, FailureReason> {
     val result = runCatching { call() }
 
@@ -17,9 +22,9 @@ internal inline fun <R, T> safeCall(
     )
 }
 
-internal inline fun safeCall(
+inline fun safeCall(
     call: () -> Unit,
-    onFailure: (Throwable) -> FailureReason = { throwable -> mapToBaseFailureReason(throwable) }
+    onFailure: (Throwable) -> FailureReason = { throwable -> mapToDefaultFailureReason(throwable) }
 ): Resource<Unit, FailureReason> {
     val result = runCatching { call() }
 
@@ -31,5 +36,3 @@ internal inline fun safeCall(
         }
     )
 }
-
-

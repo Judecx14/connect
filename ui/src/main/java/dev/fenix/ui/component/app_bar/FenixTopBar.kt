@@ -11,14 +11,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.component.button.ConnectIconButton
+import dev.fenix.ui.component.button.FenixIconButton
 import dev.fenix.ui.component.button.type.Variant
-import dev.fenix.ui.component.text.ConnectText
-import dev.fenix.ui.component.text.type.ConnectTextStyle
-import dev.fenix.ui.theme.ConnectTheme
+import dev.fenix.ui.component.text.FenixText
+import dev.fenix.ui.component.text.type.FenixTextStyle
+import dev.fenix.ui.theme.FenixTheme
 
 @Composable
-fun ConnectTopBar(
+fun FenixTopBar(
     modifier: Modifier = Modifier,
     title: String = "",
     leading: @Composable (() -> Unit)? = null,
@@ -27,9 +27,9 @@ fun ConnectTopBar(
     Box(
         modifier = modifier
             .statusBarsPadding()
-            .padding(ConnectTheme.dimensions.padding.normal)
+            .padding(FenixTheme.dimensions.padding.normal)
             .fillMaxWidth()
-            .height(ConnectTheme.dimensions.height.normal),
+            .height(FenixTheme.dimensions.height.normal),
         contentAlignment = Alignment.Center
     ) {
         leading?.let { component ->
@@ -38,9 +38,9 @@ fun ConnectTopBar(
             }
         }
 
-        ConnectText(
+        FenixText(
             text = title,
-            style = ConnectTextStyle.Title,
+            style = FenixTextStyle.Title,
             align = TextAlign.Center
         )
 
@@ -54,95 +54,95 @@ fun ConnectTopBar(
 
 @Preview(showBackground = true)
 @Composable
-private fun ConnectTopBarPreview() {
-    ConnectTheme {
+private fun FenixTopBarPreview() {
+    FenixTheme {
         Column {
             // All
-            ConnectTopBar(
+            FenixTopBar(
                 title = "Top Bar Title",
                 leading = {
-                    ConnectIconButton(
+                    FenixIconButton(
                         onClick = {},
                         variant = Variant.Outlined
                     ) { color ->
-                        ConnectText(text = "<", color = color)
+                        FenixText(text = "<", color = color)
                     }
                 },
                 trailing = {
-                    ConnectIconButton(
+                    FenixIconButton(
                         onClick = {},
                         variant = Variant.Ghost
                     ) { color ->
-                        ConnectText(text = ":", color = color)
+                        FenixText(text = ":", color = color)
                     }
                 }
             )
             // Only Title
-            ConnectTopBar(
+            FenixTopBar(
                 title = "Top Bar Title",
             )
             // Without leading and title
-            ConnectTopBar(
+            FenixTopBar(
                 title = "Top Bar Title",
                 leading = {
-                    ConnectIconButton(
+                    FenixIconButton(
                         onClick = {},
                         variant = Variant.Outlined
                     ) { color ->
-                        ConnectText(text = "<", color = color)
+                        FenixText(text = "<", color = color)
                     }
                 },
             )
             // Without trailing and title
-            ConnectTopBar(
+            FenixTopBar(
                 title = "Top Bar Title",
                 trailing = {
-                    ConnectIconButton(
+                    FenixIconButton(
                         onClick = {},
                         variant = Variant.Ghost
                     ) { color ->
-                        ConnectText(text = ":", color = color)
+                        FenixText(text = ":", color = color)
                     }
                 },
             )
             // Without title
-            ConnectTopBar(
+            FenixTopBar(
                 leading = {
-                    ConnectIconButton(
+                    FenixIconButton(
                         onClick = {},
                         variant = Variant.Outlined
                     ) { color ->
-                        ConnectText(text = "<", color = color)
+                        FenixText(text = "<", color = color)
                     }
                 },
                 trailing = {
-                    ConnectIconButton(
+                    FenixIconButton(
                         onClick = {},
                         variant = Variant.Ghost
                     ) { color ->
-                        ConnectText(text = ":", color = color)
+                        FenixText(text = ":", color = color)
                     }
                 }
             )
             // Only leading
-            ConnectTopBar(
+            FenixTopBar(
                 leading = {
-                    ConnectIconButton(
+                    FenixIconButton(
                         onClick = {},
                         variant = Variant.Outlined
                     ) { color ->
-                        ConnectText(text = "<", color = color)
+                        FenixText(text = "<", color = color)
                     }
                 },
             )
             // Only trailing
-            ConnectTopBar(
+            FenixTopBar(
                 trailing = {
-                    ConnectIconButton(
+                    FenixIconButton(
                         onClick = {},
                         variant = Variant.Ghost
                     ) { color ->
-                        ConnectText(text = ":", color = color)
+                        FenixText(text = ":", color = color)
                     }
                 }
             )

@@ -96,6 +96,8 @@ dependencies {
 
     // Connect UI Kit
     implementation(project(":ui"))
+    // Core
+    implementation(project(":core"))
     // Domain
     implementation(project(":domain"))
     // Data

@@ -2,9 +2,9 @@ package com.fenix.domain.use_case.auth
 
 import com.fenix.domain.model.auth.AuthCredentials
 import com.fenix.domain.model.auth.Session
-import com.fenix.domain.model.resource.FailureReason
-import com.fenix.domain.model.resource.Resource
-import com.fenix.domain.model.resource.bind
+import dev.fenix.core.resource.FailureReason
+import dev.fenix.core.resource.Resource
+import dev.fenix.core.resource.bind
 import com.fenix.domain.repository.auth.AuthRepository
 import javax.inject.Inject
 

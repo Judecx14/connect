@@ -7,28 +7,28 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import dev.fenix.ui.theme.ConnectTheme
-import dev.fenix.ui.component.text.ConnectText
+import dev.fenix.ui.theme.FenixTheme
+import dev.fenix.ui.component.text.FenixText
 
 @Composable
-fun ConnectTag(
+fun FenixTag(
     modifier: Modifier = Modifier,
     text: String,
-    containerColor: Color = ConnectTheme.colors.primary,
-    contentColor: Color = ConnectTheme.colors.onPrimary
+    containerColor: Color = FenixTheme.colors.primary,
+    contentColor: Color = FenixTheme.colors.onPrimary
 ) {
     Box(
         modifier = modifier
             .background(
                 color = containerColor,
-                shape = ConnectTheme.shapes.extraSmall
+                shape = FenixTheme.shapes.extraSmall
             )
             .padding(
-                horizontal = ConnectTheme.dimensions.padding.small,
-                vertical = ConnectTheme.dimensions.padding.xs
+                horizontal = FenixTheme.dimensions.padding.small,
+                vertical = FenixTheme.dimensions.padding.xs
             )
     ) {
-        ConnectText(
+        FenixText(
             text = text,
             color = contentColor,
         )
@@ -38,8 +38,8 @@ fun ConnectTag(
 
 @Preview(showBackground = true)
 @Composable
-private fun ConnectTagPreview() {
-    ConnectTheme {
-        ConnectTag(text = "Example")
+private fun FenixTagPreview() {
+    FenixTheme {
+        FenixTag(text = "Example")
     }
 }

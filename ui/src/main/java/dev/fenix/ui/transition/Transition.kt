@@ -5,7 +5,7 @@ import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 
-object ConnectTransition {
+object FenixTransition {
 
     private const val DURATION = 300
 

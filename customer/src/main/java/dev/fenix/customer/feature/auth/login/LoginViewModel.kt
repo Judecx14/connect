@@ -3,8 +3,8 @@ package dev.fenix.customer.feature.auth.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fenix.domain.model.auth.AuthCredentials
-import com.fenix.domain.model.resource.FailureReason
-import com.fenix.domain.model.resource.fold
+import dev.fenix.core.resource.FailureReason
+import dev.fenix.core.resource.fold
 import com.fenix.domain.use_case.auth.Login
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel

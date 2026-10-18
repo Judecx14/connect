@@ -1,6 +1,6 @@
 package dev.fenix.ui.component.text.type
 
-enum class ConnectTextStyle {
+enum class FenixTextStyle {
     Display,
     Headline,
     Title,
