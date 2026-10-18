@@ -34,5 +34,8 @@
     <string name="error_gps_disabled">Por favor, activa el GPS.</string>
     <string name="error_bad_request">Ocurrió un error con tu solicitud. Verifica tus credenciales e inténtalo de nuevo.</string>
     <string name="error_server">Error en el servidor. Inténtalo más tarde.</string>
+    <string name="error_invalid_credentials">El correo electrónico o la contraseña son incorrectos.</string>
+    <string name="error_user_not_found">No existe una cuenta registrada con este correo electrónico.</string>
+    <string name="error_email_already_in_use">Este correo electrónico ya se encuentra registrado.</string>
     <string name="error_unknown">Ocurrió un error desconocido. Inténtalo más tarde.</string>
 </resources>

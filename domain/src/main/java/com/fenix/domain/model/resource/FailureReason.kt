@@ -11,5 +11,11 @@ sealed interface FailureReason {
        data object InternalServerError : Api(505)
     }
 
+    sealed interface Auth : FailureReason {
+        data object InvalidCredentials : Auth
+        data object UserNotFound : Auth
+        data object EmailAlreadyInUse : Auth
+    }
+
     data object Unknown : FailureReason
 }

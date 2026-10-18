@@ -1,6 +1,7 @@
 package com.fenix.data.repository.auth
 
 import com.fenix.data.datasource.api.safeCall
+import com.fenix.data.datasource.error.mapFirebaseAuthException
 import com.fenix.domain.model.auth.AuthState
 import com.fenix.domain.model.auth.AuthCredentials
 import com.fenix.domain.model.auth.SignUpInput
@@ -22,6 +23,7 @@ class AuthRepositoryImpl @Inject constructor(
                     input.password
                 ).await()
             },
+            onFailure = { throwable -> mapFirebaseAuthException(throwable) }
         )
     }
 
@@ -33,6 +35,7 @@ class AuthRepositoryImpl @Inject constructor(
                     credentials.password
                 ).await()
             },
+            onFailure = { throwable -> mapFirebaseAuthException(throwable) }
         )
     }
 
