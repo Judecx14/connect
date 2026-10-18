@@ -94,10 +94,10 @@ dependencies {
     // GMS Play services location
     implementation(libs.play.services.location)
 
-    // Connect UI Kit
-    implementation(project(":ui"))
+    // Fenix kit
+    implementation(libs.fenix.ui)
     // Core
-    implementation(project(":core"))
+    implementation(libs.fenix.core)
     // Domain
     implementation(project(":domain"))
     // Data

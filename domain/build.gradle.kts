@@ -20,5 +20,5 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
 
     // Core
-    api(project(":core"))
+    api(libs.fenix.core)
 }

@@ -23,10 +23,12 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Connect"
-include(":ui")
 include(":customer")
 include(":delivery")
 include(":business")
-include(":core")
 include(":domain")
 include(":data")
+
+
+// Reusable kit (dev.fenix:core, dev.fenix:ui) living in a sibling repo
+includeBuild("../fenix-kit")

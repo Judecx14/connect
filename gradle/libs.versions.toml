@@ -79,6 +79,10 @@ kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializat
 # Serilization Error REMOVE
 androidx-annotation-experimental = { module = "androidx.annotation:annotation-experimental", version.ref = "androidx-annotation-experimental" }
 
+# Fenix kit (resolved through includeBuild in settings.gradle.kts)
+fenix-core = { module = "dev.fenix:core" }
+fenix-ui = { module = "dev.fenix:ui" }
+
 # Kotlin coroutines
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 

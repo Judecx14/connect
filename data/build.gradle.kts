@@ -62,7 +62,7 @@ dependencies {
     implementation(libs.androidx.annotation.experimental)
 
     // core
-    implementation(project(":core"))
+    implementation(libs.fenix.core)
 
     // domain
     implementation(project(":domain"))
